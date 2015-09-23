@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:customAttrs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="horizontal"
+    android:padding="7dp"
+    android:id="@+id/click_item">
+    <View
+        android:layout_width="13dp"
+        android:layout_height="match_parent"
+        android:background="#fb34b8eb"></View>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/list_item_image"
+            android:src="@drawable/temp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#68000000"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="100dp">
+
+            <com.ecea.resonance15.Utlis.CustomFontTextView
+                android:id="@+id/list_item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#7935c7fb"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="lorem ipsum"
+                android:textColor="#fff"
+                android:textSize="22dp"
+                customAttrs:customFont="fonts/Gregular.otf" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

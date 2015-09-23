@@ -1,0 +1,87 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+hr {
+    max-width: 50px;
+    border-color: #f05f40;
+    border-width: 3px;
+}
+
+.contact-div{
+	max-width: 200px;
+	height: 3px;
+    border-color: #f05f40;
+    border-width: 1px;
+}
+.light{
+	border-color: #fff;
+}
+.bg-primary {
+    background-color: #f05f40;
+}
+
+.quote{
+	text-align: center;
+	font-family: Gbold;
+	padding: 12px;
+	width: 100%;
+	height:auto;
+}
+
+@font-face {
+    font-family: Gbold;                    
+    src: url('file:///android_asset/fonts/Gbold.otf');
+
+}
+@font-face {
+    font-family: Glight;
+    src: url('file:///android_asset/fonts/Glight.otf');
+
+}
+@font-face {
+    font-family: Gmedium;
+    src: url('file:///android_asset/fonts/Gmedium.otf');
+
+}
+@font-face {
+    font-family: Gregular;
+    src: url('file:///android_asset/fonts/Gregular.otf');
+}
+.section-heading
+{
+	font-family: Gmedium;
+	padding-top: 10px;
+}
+
+.section-content{
+	font-family: Glight;
+	font-size: 18px;
+	padding-bottom: 20px;
+}
+
+ul li{
+	font-family: Glight;
+	font-size: 18px;	
+}
+
+.contact a img{
+    height: 30px;
+    width: 30px;
+}
+
+.contact > p{
+	font-size: 20px;
+	font-family: Gregular;
+	padding-left: 15px;
+}
+
+.contact a{
+	padding: 15px;
+} 
+
+.contact{
+	padding-bottom: 20px;
+}

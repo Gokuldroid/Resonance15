@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textColorSecondary">#ff000000</item>
+        <item name="android:textColorPrimary">#f8000000</item>
+    </style>
+
+    <style name="ToolbarCustomIconColor" parent="AppTheme">
+        <!-- android:textColorSecondary is used for coloring the navigation drawer icon and up arrow. -->
+        <item name="android:textColorSecondary">#ffffffff</item>
+        <item name="android:textColorPrimary">#ffff</item>
+    </style>
+
+</resources>
