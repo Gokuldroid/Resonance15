@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ecea.resonance15" >
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <permission android:name="com.ecea.resonance15.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="com.ecea.resonance15.permission.C2D_MESSAGE" />
+    <!-- This app has permission to register and receive dataf message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,6 +18,12 @@
         <activity
             android:name=".Resonance_Home"
             android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                    <action android:name="com.ecea.resonance15.MESSAGE" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ListActivity"
@@ -18,12 +32,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ecea.resonance15.Resonance_Home" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".EventLayout"
@@ -33,6 +41,38 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.ecea.resonance15.ListActivity" />
         </activity>
+        <activity
+            android:name=".Workshop_ListActivity"
+            android:label="@string/title_activity_event_layout"
+            android:parentActivityName=".ListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ecea.resonance15.ListActivity" />
+        </activity>
+        <activity
+            android:name=".SocialHub"
+            android:label="@string/title_activity_social_hub"
+            android:parentActivityName=".Resonance_Home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.ecea.resonance15.Resonance_Home" />
+        </activity>
+
+
+        <receiver
+            android:name="com.pushbots.google.gcm.GCMBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <!-- Receives the actual messages. -->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <!-- Receives the registration id. -->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.example.sampleapp" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.pushbots.push.DefaultPushHandler" />
+        <service android:name="com.pushbots.push.GCMIntentService" />
+
     </application>
 
 </manifest>

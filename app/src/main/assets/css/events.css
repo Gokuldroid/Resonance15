@@ -67,6 +67,11 @@ ul li{
 	font-size: 18px;	
 }
 
+ol li{
+	font-family: Glight;
+	font-size: 18px;
+}
+
 .contact a img{
     height: 30px;
     width: 30px;

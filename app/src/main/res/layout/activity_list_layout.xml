@@ -9,7 +9,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#0d52d8"
+        android:background="#1d1d1d"
         android:minHeight="?attr/actionBarSize"
         app:popupTheme="@style/AppTheme"
         app:theme="@style/ToolbarCustomIconColor"

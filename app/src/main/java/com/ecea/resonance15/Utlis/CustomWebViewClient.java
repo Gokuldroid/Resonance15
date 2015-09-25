@@ -33,6 +33,7 @@ public class CustomWebViewClient extends WebViewClient {
             phno=phno.trim();
             dial.setData(Uri.parse(phno));
             context.startActivity(dial);
+            return true;
 
         }else if(url.contains("mail"))
         {
@@ -41,6 +42,12 @@ public class CustomWebViewClient extends WebViewClient {
             email.setData(Uri.parse("mailto:"));
             email.putExtra(Intent.EXTRA_EMAIL, new String[]{emailstr});
             context.startActivity(Intent.createChooser(email, "Send mail ..."));
+            return true;
+        }
+        else {
+            Intent webview =new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+            webview.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(webview);
         }
         return true;
     }

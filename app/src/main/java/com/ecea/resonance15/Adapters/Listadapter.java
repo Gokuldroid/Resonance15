@@ -2,6 +2,7 @@ package com.ecea.resonance15.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.ecea.resonance15.EventLayout;
 import com.ecea.resonance15.R;
@@ -36,14 +38,17 @@ public class Listadapter extends RecyclerView.Adapter<Listadapter.ViewHolder> {
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent detailIntent = new Intent(context,EventLayout.class);
-                detailIntent.putExtra("title",titles.get(position));
-                detailIntent.putExtra("url",urls.get(position));
+                Intent detailIntent = new Intent(context, EventLayout.class);
+                detailIntent.putExtra("title", titles.get(position));
+                detailIntent.putExtra("url", urls.get(position));
                 detailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(detailIntent);
             }
         });
         holder.textView.setText(titles.get(position));
+        holder.imageView.setImageResource(image.get(position));
+
+
     }
 
     @Override
@@ -60,13 +65,13 @@ public class Listadapter extends RecyclerView.Adapter<Listadapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        CustomFontTextView textView;
+        TextView textView;
         LinearLayout linearLayout;
 
         public ViewHolder(View v) {
             super(v);
             imageView = (ImageView) v.findViewById(R.id.list_item_image);
-            textView = (CustomFontTextView) v.findViewById(R.id.list_item_title);
+            textView = (TextView) v.findViewById(R.id.list_item_title);
             linearLayout=(LinearLayout) v.findViewById(R.id.click_item);
         }
     }
